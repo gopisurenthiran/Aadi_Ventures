@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaHome, FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "/assets/main-logo.png"; // adjust path if needed
 
 export default function Header() {
@@ -16,7 +17,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-center relative">
         {/* Logo (left) */}
         <div className="absolute left-4 top-1/2 -translate-y-1/2">
-          <img src={logo} alt="aadi logo" className="h-10" />
+          <Link to="/">
+            <img src={logo} alt="aadi logo" className="h-10" />
+          </Link>
         </div>
 
         {/* Desktop Menu (center) */}
@@ -28,10 +31,13 @@ export default function Header() {
           }}
         >
           <div className="flex items-center font-primary gap-2">
-            <FaHome className="text-xl" />
-            <a href="#about" className="hover:text-blue-800 font-primary">
+            <Link to="/">
+              <FaHome className="text-xl" />
+            </Link>
+
+            <Link to="/about" className="hover:text-blue-800 font-primary">
               About Us
-            </a>
+            </Link>
             <div className="h-5 w-px bg-gray-500" />
             <a href="#purpose" className="hover:text-blue-800 font-primary">
               Services
@@ -47,7 +53,7 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Hamburger Icon (right on mobile) */}
+        {/* Hamburger Icon (mobile) */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -61,13 +67,13 @@ export default function Header() {
       {/* Mobile Menu Dropdown */}
       {menuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-[#c6e5fb] shadow-md px-6 py-4 font-primary space-y-4 text-center text-black">
-          <a
-            href="#about"
+          <Link
+            to="/about"
             className="block hover:text-blue-800"
             onClick={() => setMenuOpen(false)}
           >
             About Us
-          </a>
+          </Link>
           <a
             href="#purpose"
             className="block hover:text-blue-800"
