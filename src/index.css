@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'HarabaraMais';
+  src: url('/font/Harabara Mais Demo.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NexaTrial';
+  src: url('/font/Nexa-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Optional: CSS variables */
+:root {
+  --primary: 'HarabaraMais', sans-serif;
+  --secondary: 'NexaTrial', sans-serif;
+}
+.image{
+  background-image: url('/assets/map.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+height: 100vh;
+}
+
+
+
+
+
+
+
+.map-wrapper {
+  background-color: #0f2f4f;
+  padding: 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-title {
+  text-align: center;
+  font-size: 28px;
+  color: #f7c439;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.map {
+  background-image: radial-gradient(#b4cde1 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+.tooltip {
+  background-color: #052747;
+  padding: 10px;
+  border-radius: 5px;
+  width: 160px;
+  font-size: 10px;
+  color: #fff;
+  border: 1px solid #f7c439;
+}
+
+.tooltip-label {
+  background: #f7c439;
+  color: #000;
+  padding: 2px 6px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.tooltip-description {
+  margin-bottom: 5px;
+}
+
+.tooltip-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
